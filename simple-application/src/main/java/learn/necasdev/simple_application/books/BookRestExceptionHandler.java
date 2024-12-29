@@ -1,5 +1,6 @@
 package learn.necasdev.simple_application.books;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,5 +23,12 @@ public class BookRestExceptionHandler extends ResponseEntityExceptionHandler {
             Exception ex, WebRequest request) {
         return handleExceptionInternal(ex, ex.getLocalizedMessage(), new HttpHeaders(), 
             HttpStatus.BAD_REQUEST, request);
+    }
+
+    @ExceptionHandler({ DataIntegrityViolationException.class })
+    protected ResponseEntity<Object> handleDataIntegrityViolation(
+        Exception ex, WebRequest request) {
+            return handleExceptionInternal(ex, ex.getLocalizedMessage(), new HttpHeaders(),
+                HttpStatus.BAD_REQUEST, request);
     }
 }
