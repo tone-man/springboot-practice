@@ -3,7 +3,6 @@ package learn.necasdev.simple_application;
 import learn.necasdev.simple_application.books.Book;
 
 import static org.apache.commons.lang3.RandomStringUtils.insecure;
-import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
